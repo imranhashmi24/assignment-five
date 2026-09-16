@@ -12,7 +12,7 @@ const TechnologiesContent = () => {
   const [selectedStack, setSelectedStack] = useState<Technology[]>([]);
 
   useEffect(() => {
-    fetch("/data/technologies.json")
+    fetch(`${import.meta.env.BASE_URL}data/technologies.json`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to load technologies");
         return res.json();
