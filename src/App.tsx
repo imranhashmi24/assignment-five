@@ -10,7 +10,7 @@ import TechnologiesContent from "./components/technologies/TechnologiesContent";
 import type { Technology } from "./types/technology";
 
 const technologiesPromise: Promise<Technology[]> = fetch(
-  "/data/technologies.json",
+  `${import.meta.env.BASE_URL}data/technologies.json`,
 ).then((res) => {
   if (!res.ok) throw new Error("Failed to load technologies");
   return res.json();
